@@ -12,7 +12,7 @@ typo3conf/PackageStates.php
 
 ### TYPO3 Extension Handling (typo3conf/ext ignorieren und alle eigenen Extensions, ausser die über Composer kommen, ausnehmen)
 typo3conf/ext/*
-!/Web/typo3conf/ext/in2template/
+!/typo3conf/ext/template/
 
 ### Dateien die per SYMLINK hinzugefügt werden
 ### bzw. Logfiles und TXT-Files
