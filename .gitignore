@@ -1,9 +1,11 @@
 ### TYPO3 spezielle Dateien
+.*
+composer.*
 fileadmin/
 typo3temp/
 uploads/
 typo3conf/l10n/
-typo3conf/extTables.php
+typo3conf/*Configuration.php
 typo3conf/ENABLE_INSTALL_TOOL
 typo3conf/AdditionalConfiguration/
 typo3conf/PackageStates.php
