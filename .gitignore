@@ -5,9 +5,8 @@ fileadmin/
 typo3temp/
 uploads/
 typo3conf/l10n/
-typo3conf/*Configuration.php
+typo3conf/LocalConfiguration.php
 typo3conf/ENABLE_INSTALL_TOOL
-typo3conf/AdditionalConfiguration/
 typo3conf/PackageStates.php
 
 ### TYPO3 Extension Handling (typo3conf/ext ignorieren und alle eigenen Extensions, ausser die über Composer kommen, ausnehmen)
