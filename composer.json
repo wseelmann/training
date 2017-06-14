@@ -1,0 +1,18 @@
+{
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://composer.typo3.org/"
+    }
+  ],
+  "require": {
+    "typo3/cms": "7.*",
+    "typo3-ter/extension-builder": "*",
+    "helhum/typo3-console": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vendor\\Example\\": "typo3conf/ext/vendor/Classes"
+    }
+  }
+}
