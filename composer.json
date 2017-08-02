@@ -6,7 +6,7 @@
     }
   ],
   "require": {
-    "typo3/cms": "7.*",
+    "typo3/cms": "8.*",
     "typo3-ter/extension-builder": "*",
     "helhum/typo3-console": "*"
   },
