@@ -1,3 +1,4 @@
+# <INCLUDE_TYPOSCRIPT: source="FILE:typo3conf/ext/template/Configuration/TypoScript/Main.typoscript">
 page = PAGE
 page.10 = TEXT
 page.10.value = Hello World
