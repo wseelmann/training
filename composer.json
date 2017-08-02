@@ -3,11 +3,15 @@
     {
       "type": "composer",
       "url": "https://composer.typo3.org/"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/einpraegsam/extension_builder"
     }
   ],
   "require": {
     "typo3/cms": "8.*",
-    "typo3-ter/extension-builder": "*",
+    "friendsoftypo3/extension-builder": "dev-master",
     "helhum/typo3-console": "*"
   },
   "autoload": {
