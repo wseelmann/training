@@ -2,6 +2,20 @@
 
 Welcome to your individual training for extension development in TYPO3  
 
+## Note
+
+I renamed the repository from Playground to Training
+
+## Overview
+
+| Branch      | Date        | Content                                           | 
+| ----------- | ----------- | ------------------------------------------------- |
+| eno.de      | 2017-08     | TYPO3 Integration/Admin & Extbase/Fluid Training  |
+| group       | 2017-08     | TYPO3 Extbase/Fluid Group Training                |
+| puffer      | 2017-07     | TYPO3 Extbase/Fluid Person Training               |
+| twofour     | 2017-06     | TYPO3 Extbase/Fluid Company Training              |
+| unikonstanz | 2017-03     | TYPO3 Extbase/Fluid Company Training              |
+
 ## Contact
 
 Alex Kellner  
