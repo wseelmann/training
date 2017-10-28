@@ -1,6 +1,6 @@
 # TYPO3 instance for your training session
 
-Welcome to your individual training for extension development in TYPO3  
+Welcome to your individual training for extension development or administration/integration in TYPO3  
 
 ## Note
 
@@ -10,6 +10,7 @@ I renamed the repository from Playground to Training
 
 | Branch      | Date        | Content                                           | 
 | ----------- | ----------- | ------------------------------------------------- |
+| undkonsorten| 2017-10     | TYPO3 Integration/Admin Training                  |
 | eno.de      | 2017-08     | TYPO3 Integration/Admin & Extbase/Fluid Training  |
 | group       | 2017-08     | TYPO3 Extbase/Fluid Group Training                |
 | puffer      | 2017-07     | TYPO3 Extbase/Fluid Person Training               |
