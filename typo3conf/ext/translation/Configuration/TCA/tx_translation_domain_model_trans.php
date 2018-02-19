@@ -2,7 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_trans',
-        'label' => 'customer',
+        'label' => 'subject_from',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',

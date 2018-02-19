@@ -2,8 +2,7 @@
 defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(
-    function()
-    {
+    function () {
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'In2code.Translation',
@@ -17,9 +16,9 @@ call_user_func(
             ]
         );
 
-    // wizards
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        'mod {
+        // wizards
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+            'mod {
             wizards.newContentElement.wizardItems.plugins {
                 elements {
                     pi1 {
@@ -35,6 +34,6 @@ call_user_func(
                 show = *
             }
        }'
-    );
+        );
     }
 );
