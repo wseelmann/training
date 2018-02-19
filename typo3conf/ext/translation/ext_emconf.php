@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = [
     'title' => 'translation',
     'description' => 'Translation database',
     'category' => 'plugin',
-    'author' => 'Alex Kellne',
+    'author' => 'Alex Kellner',
     'author_email' => 'alexander.kellner@in2code.de',
     'state' => 'alpha',
     'internal' => '',
@@ -24,7 +24,7 @@ $EM_CONF[$_EXTKEY] = [
     'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.6.0-8.6.99',
+            'typo3' => '8.7.0-8.7.99',
         ],
         'conflicts' => [],
         'suggests' => [],
