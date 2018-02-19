@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Trans</h1>
+
+<f:flashMessages />
+
+<table  class="tx_translation" >
+	<tr>
+		<th><f:translate key="tx_translation_domain_model_trans.customer" /></th>
+		<th><f:translate key="tx_translation_domain_model_trans.from_language" /></th>
+		<th><f:translate key="tx_translation_domain_model_trans.to_language" /></th>
+		<th><f:translate key="tx_translation_domain_model_trans.subject_from" /></th>
+		<th><f:translate key="tx_translation_domain_model_trans.subject_to" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{transs}" as="trans">
+		<tr>
+			<td><f:link.action action="show" arguments="{trans : trans}"> {trans.customer}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{trans : trans}"> {trans.fromLanguage}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{trans : trans}"> {trans.toLanguage}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{trans : trans}"> {trans.subjectFrom}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{trans : trans}"> {trans.subjectTo}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{trans : trans}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{trans : trans}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Trans</f:link.action>
+</f:section>
+</html>

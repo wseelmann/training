@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-02-19T14:49:04Z" product-name="translation">
+		<header/>
+		<body>
+			<trans-unit id="customer.description">
+				<source>customer</source>
+			</trans-unit>
+			<trans-unit id="from_language.description">
+				<source>fromLanguage</source>
+			</trans-unit>
+			<trans-unit id="to_language.description">
+				<source>toLanguage</source>
+			</trans-unit>
+			<trans-unit id="subject_from.description">
+				<source>subjectFrom</source>
+			</trans-unit>
+			<trans-unit id="subject_to.description">
+				<source>subjectTo</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
