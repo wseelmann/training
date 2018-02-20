@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-02-19T14:49:04Z" product-name="translation">
+		<header/>
+		<body>
+			<trans-unit id="tx_translation_domain_model_trans">
+				<source>Translation</source>
+				<target state="translated">?bersetzung</target>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.customer">
+				<source>Customer</source>
+				<target state="translated">Kunde</target>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.from_language">
+				<source>From Language</source>
+				<target state="translated">Ausgangssprache</target>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.to_language">
+				<source>To Language</source>
+				<target state="translated">Zielsprache</target>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.subject_from">
+				<source>Subject From</source>
+				<target state="translated">Ausgangsbegriff</target>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.subject_to">
+				<source>Subject To</source>
+				<target state="translated">Zielbegriff</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
