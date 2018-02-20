@@ -61,6 +61,17 @@ class TransController extends ActionController
     }
 
     /**
+     * @param Trans $translation
+     * @return void
+     */
+    public function deleteAction(Trans $translation)
+    {
+        $this->transRepository->remove($translation);
+        $this->addFlashMessage('Datensatz mit UID ' . $translation->getUid() . ' erfolgreich gelöscht');
+        $this->redirect('list');
+    }
+
+    /**
      * @param TransRepository $transRepository
      * @return void
      */
