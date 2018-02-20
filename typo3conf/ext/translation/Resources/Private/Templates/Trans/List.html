@@ -1,23 +1,25 @@
 <table>
     <tr>
+        <th>Uid</th>
         <th><f:translate key="tx_translation_domain_model_trans.customer">kunde</f:translate></th>
         <th><f:translate key="tx_translation_domain_model_trans.from_language">von</f:translate></th>
         <th><f:translate key="tx_translation_domain_model_trans.to_language">Nach</f:translate></th>
-        <th><f:translate key="tx_translation_domain_model_trans.subject_from">Begriff von</f:translate></th>
-        <th><f:translate key="tx_translation_domain_model_trans.subject_to">Begriff nach</f:translate></th>
         <th>Muss geändet werden!</th>
+        <th></th>
     </tr>
     <f:for each="{translations}" as="translation">
         <tr>
+            <td>{translation.uid}</td>
             <td>{translation.customer}</td>
             <td>{translation.fromLanguage}</td>
             <td>{translation.toLanguage}</td>
-            <td>{translation.subjectFrom}</td>
-            <td>{translation.subjectTo}</td>
             <td>
                 <f:if condition="{translation.tooOld}">
                     Bitte prüfen!
                 </f:if>
+            </td>
+            <td>
+                <f:link.action action="detail" arguments="{translation:translation}">Link</f:link.action>
             </td>
         </tr>
     </f:for>

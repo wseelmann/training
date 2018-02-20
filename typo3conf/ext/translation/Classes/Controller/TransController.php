@@ -1,6 +1,7 @@
 <?php
 namespace In2code\Translation\Controller;
 
+use In2code\Translation\Domain\Model\Trans;
 use In2code\Translation\Domain\Repository\TransRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -21,6 +22,15 @@ class TransController extends ActionController
     {
         $translations = $this->transRepository->findAll();
         $this->view->assign('translations', $translations);
+    }
+
+    /**
+     * @param Trans $translation => comes from &tx_translation_pi1[translation]=123
+     * @return void
+     */
+    public function detailAction(Trans $translation)
+    {
+        $this->view->assign('translation', $translation);
     }
 
     /**
