@@ -14,17 +14,17 @@
                 <tr>
                     <th>Uid</th>
                     <th><f:translate key="tx_translation_domain_model_trans.customer">kunde</f:translate></th>
-                    <th><f:translate key="tx_translation_domain_model_trans.from_language">von</f:translate></th>
-                    <th><f:translate key="tx_translation_domain_model_trans.to_language">Nach</f:translate></th>
-                    <th>Muss geändert werden!</th>
+                    <th>von/nach</th>
+                    <th>Begriff</th>
+                    <th>Veraltet?</th>
                     <th></th>
                 </tr>
                 <f:for each="{translations}" as="translation">
                     <tr>
                         <td>{translation.uid}</td>
                         <td>{translation.customer}</td>
-                        <td>{translation.fromLanguage}</td>
-                        <td>{translation.toLanguage}</td>
+                        <td>{translation.fromLanguage}/{translation.toLanguage}</td>
+                        <td>{translation.subjectFrom}</td>
                         <td>
                             <f:if condition="{translation.tooOld}">
                                 Bitte prüfen!
