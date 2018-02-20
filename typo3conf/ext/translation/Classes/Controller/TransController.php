@@ -1,6 +1,7 @@
 <?php
 namespace In2code\Translation\Controller;
 
+use In2code\Translation\Domain\Repository\TransRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -9,8 +10,7 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class TransController extends ActionController
 {
     /**
-     * @var \In2code\Translation\Domain\Repository\TransRepository
-     * @inject
+     * @var TransRepository
      */
     protected $transRepository = null;
 
@@ -21,5 +21,14 @@ class TransController extends ActionController
     {
         $translations = $this->transRepository->findAll();
         $this->view->assign('translations', $translations);
+    }
+
+    /**
+     * @param TransRepository $transRepository
+     * @return void
+     */
+    public function injectTransRepository(TransRepository $transRepository)
+    {
+        $this->transRepository = $transRepository;
     }
 }
