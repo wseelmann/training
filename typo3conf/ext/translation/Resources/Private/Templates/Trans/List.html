@@ -1,42 +1,48 @@
 {namespace t=In2code\Translation\ViewHelpers}
-<f:render partial="Filter" arguments="{_all}" />
+<f:layout name="Translation" />
 
-<f:if condition="{translations}">
-    <f:then>
-        <table>
-            <tr>
-                <th>Uid</th>
-                <th><f:translate key="tx_translation_domain_model_trans.customer">kunde</f:translate></th>
-                <th><f:translate key="tx_translation_domain_model_trans.from_language">von</f:translate></th>
-                <th><f:translate key="tx_translation_domain_model_trans.to_language">Nach</f:translate></th>
-                <th>Muss geändert werden!</th>
-                <th></th>
-            </tr>
-            <f:for each="{translations}" as="translation">
+    Add an layout
+
+
+<f:section name="List">
+    <f:render partial="Filter" arguments="{_all}" />
+
+    <f:if condition="{translations}">
+        <f:then>
+            <table>
                 <tr>
-                    <td>{translation.uid}</td>
-                    <td>{translation.customer}</td>
-                    <td>{translation.fromLanguage}</td>
-                    <td>{translation.toLanguage}</td>
-                    <td>
-                        <f:if condition="{translation.tooOld}">
-                            Bitte prüfen!
-                        </f:if>
-
-                        <f:if condition="{t:isTooOld(tstamp:translation.tstamp)}">
-                            Bitte prüfen (VH)!
-                        </f:if>
-                    </td>
-                    <td>
-                        <f:link.action action="detail" arguments="{translation:translation}">Link</f:link.action>
-                    </td>
+                    <th>Uid</th>
+                    <th><f:translate key="tx_translation_domain_model_trans.customer">kunde</f:translate></th>
+                    <th><f:translate key="tx_translation_domain_model_trans.from_language">von</f:translate></th>
+                    <th><f:translate key="tx_translation_domain_model_trans.to_language">Nach</f:translate></th>
+                    <th>Muss geändert werden!</th>
+                    <th></th>
                 </tr>
-            </f:for>
-        </table>
-    </f:then>
-    <f:else>
-        Keine Daten vorhanden.
-        <f:link.page>Zeige alle Daten</f:link.page>
-    </f:else>
-</f:if>
+                <f:for each="{translations}" as="translation">
+                    <tr>
+                        <td>{translation.uid}</td>
+                        <td>{translation.customer}</td>
+                        <td>{translation.fromLanguage}</td>
+                        <td>{translation.toLanguage}</td>
+                        <td>
+                            <f:if condition="{translation.tooOld}">
+                                Bitte prüfen!
+                            </f:if>
 
+                            <f:if condition="{t:isTooOld(tstamp:translation.tstamp)}">
+                                Bitte prüfen (VH)!
+                            </f:if>
+                        </td>
+                        <td>
+                            <f:link.action action="detail" arguments="{translation:translation}">Link</f:link.action>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:then>
+        <f:else>
+            Keine Daten vorhanden.
+            <f:link.page>Zeige alle Daten</f:link.page>
+        </f:else>
+    </f:if>
+</f:section>
