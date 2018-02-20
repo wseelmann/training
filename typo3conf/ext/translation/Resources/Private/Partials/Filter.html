@@ -4,6 +4,11 @@
         <f:form.textfield property="searchword" value="{filter.searchword}" />
     </label>
 
+    <label>
+        Ausganssprache
+        <f:form.select property="from" options="{de:'de',en:'en'}" value="{filter.from}" prependOptionValue="" prependOptionLabel="Sprache wählen..." />
+    </label>
+
     <f:form.submit value="Jetzt filtern" />
 </f:form>
 
