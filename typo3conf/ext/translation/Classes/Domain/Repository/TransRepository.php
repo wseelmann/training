@@ -19,6 +19,10 @@ class TransRepository extends Repository
     {
         $query = $this->createQuery();
         $this->addFilterQuery($filter, $query);
+        $query->setOrderings([
+            'subjectFrom' => QueryInterface::ORDER_ASCENDING,
+            'subjectTo' => QueryInterface::ORDER_ASCENDING
+        ]);
         return $query->execute();
     }
 
