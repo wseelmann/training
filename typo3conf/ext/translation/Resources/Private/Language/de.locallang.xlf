@@ -27,6 +27,11 @@
 				<source>Subject To</source>
 				<target state="translated">Zielbegriff</target>
 			</trans-unit>
+
+			<trans-unit id="dateformat">
+				<source>Y-m-d</source>
+				<target state="translated">d.m.Y</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -21,6 +21,10 @@
 			<trans-unit id="tx_translation_domain_model_trans.subject_to">
 				<source>Subject To</source>
 			</trans-unit>
+
+			<trans-unit id="dateformat">
+				<source>Y-m-d</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

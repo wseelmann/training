@@ -5,6 +5,7 @@
         <th><f:translate key="tx_translation_domain_model_trans.to_language">Nach</f:translate></th>
         <th><f:translate key="tx_translation_domain_model_trans.subject_from">Begriff von</f:translate></th>
         <th><f:translate key="tx_translation_domain_model_trans.subject_to">Begriff nach</f:translate></th>
+        <th>Muss geändet werden!</th>
     </tr>
     <f:for each="{translations}" as="translation">
         <tr>
@@ -13,6 +14,11 @@
             <td>{translation.toLanguage}</td>
             <td>{translation.subjectFrom}</td>
             <td>{translation.subjectTo}</td>
+            <td>
+                <f:if condition="{translation.tooOld}">
+                    Bitte prüfen!
+                </f:if>
+            </td>
         </tr>
     </f:for>
 </table>

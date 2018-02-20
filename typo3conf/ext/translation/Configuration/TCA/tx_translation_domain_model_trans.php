@@ -153,6 +153,11 @@ return [
                 'eval' => 'trim'
             ],
         ],
-    
+        'tstamp' => [
+            'config' => [
+                'type' => 'input',
+                'eval' => 'datetime'
+            ],
+        ],
     ],
 ];

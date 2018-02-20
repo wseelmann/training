@@ -53,6 +53,11 @@ class Trans extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $subjectTo = '';
 
     /**
+     * @var \DateTime
+     */
+    protected $tstamp = null;
+
+    /**
      * Returns the customer
      *
      * @return string $customer
@@ -155,5 +160,35 @@ class Trans extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setSubjectTo($subjectTo)
     {
         $this->subjectTo = $subjectTo;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTstamp()
+    {
+        return $this->tstamp;
+    }
+
+    /**
+     * @param \DateTime $tstamp
+     * @return void
+     */
+    public function setTstamp(\DateTime $tstamp)
+    {
+        $this->tstamp = $tstamp;
+    }
+
+    /**
+     * Check if last change is older then 1 year
+     *      get it in view with {object.tooOld}
+     *
+     * @return bool
+     */
+    public function isTooOld(): bool
+    {
+        $now = new \DateTime();
+        $yearsAgo = $now->diff($this->getTstamp())->y;
+        return $yearsAgo >= 1;
     }
 }
