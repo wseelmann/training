@@ -18,11 +18,12 @@ class TransController extends ActionController
 
     /**
      * @param array $filter
+     * @param array $sorting
      * @return void
      */
-    public function listAction(array $filter = [])
+    public function listAction(array $filter = [], array $sorting = [])
     {
-        $translations = $this->transRepository->findByFilter($filter);
+        $translations = $this->transRepository->findByFilter($filter, $sorting);
         $this->view->assign('translations', $translations);
         $this->view->assign('filter', $filter);
     }

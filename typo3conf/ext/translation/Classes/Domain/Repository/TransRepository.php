@@ -13,16 +13,14 @@ class TransRepository extends Repository
 
     /**
      * @param array $filter
+     * @param array $sorting
      * @return QueryResultInterface
      */
-    public function findByFilter(array $filter)
+    public function findByFilter(array $filter, array $sorting): QueryResultInterface
     {
         $query = $this->createQuery();
         $this->addFilterQuery($filter, $query);
-        $query->setOrderings([
-            'subjectFrom' => QueryInterface::ORDER_ASCENDING,
-            'subjectTo' => QueryInterface::ORDER_ASCENDING
-        ]);
+        $this->addOrder($query, $sorting);
         return $query->execute();
     }
 
@@ -59,5 +57,24 @@ class TransRepository extends Repository
     protected function isAnyFilterSet(array $filter): bool
     {
         return !empty($filter['searchword']) || !empty($filter['from']);
+    }
+
+    /**
+     * @param QueryInterface $query
+     * @param array $sorting
+     * @return void
+     */
+    protected function addOrder(QueryInterface $query, array $sorting)
+    {
+        if ($sorting !== []) {
+            $query->setOrderings([
+                $sorting['field'] => $sorting['order']
+            ]);
+        } else {
+            $query->setOrderings([
+                'subjectFrom' => QueryInterface::ORDER_ASCENDING,
+                'subjectTo' => QueryInterface::ORDER_ASCENDING
+            ]);
+        }
     }
 }
