@@ -1,3 +1,4 @@
+{namespace t=In2code\Translation\ViewHelpers}
 <f:render partial="Filter" arguments="{_all}" />
 
 <f:if condition="{translations}">
@@ -8,7 +9,7 @@
                 <th><f:translate key="tx_translation_domain_model_trans.customer">kunde</f:translate></th>
                 <th><f:translate key="tx_translation_domain_model_trans.from_language">von</f:translate></th>
                 <th><f:translate key="tx_translation_domain_model_trans.to_language">Nach</f:translate></th>
-                <th>Muss geändet werden!</th>
+                <th>Muss geändert werden!</th>
                 <th></th>
             </tr>
             <f:for each="{translations}" as="translation">
@@ -20,6 +21,10 @@
                     <td>
                         <f:if condition="{translation.tooOld}">
                             Bitte prüfen!
+                        </f:if>
+
+                        <f:if condition="{t:isTooOld(tstamp:translation.tstamp)}">
+                            Bitte prüfen (VH)!
                         </f:if>
                     </td>
                     <td>
