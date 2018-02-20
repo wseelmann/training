@@ -67,6 +67,7 @@ class TransRepository extends Repository
     protected function addOrder(QueryInterface $query, array $sorting)
     {
         if ($sorting !== []) {
+            $this->checkForAllowedOrderings($sorting);
             $query->setOrderings([
                 $sorting['field'] => $sorting['order']
             ]);
@@ -75,6 +76,31 @@ class TransRepository extends Repository
                 'subjectFrom' => QueryInterface::ORDER_ASCENDING,
                 'subjectTo' => QueryInterface::ORDER_ASCENDING
             ]);
+        }
+    }
+
+    /**
+     * @param array $sorting
+     * @return void
+     */
+    protected function checkForAllowedOrderings(array $sorting)
+    {
+        $fields = [
+            'customer',
+            'fromLanguage',
+            'toLanguage',
+            'subjectFrom',
+            'subjectTo'
+        ];
+        if (!in_array($sorting['field'], $fields)) {
+            throw new \UnexpectedValueException('Not allowed field for sorting', 1519144467);
+        }
+        $order = [
+            'ASC',
+            'DESC'
+        ];
+        if (!in_array($sorting['order'], $order)) {
+            throw new \UnexpectedValueException('Not allowed order for sorting', 1519144526);
         }
     }
 }
