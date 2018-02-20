@@ -1,34 +1,5 @@
 <f:form name="translation" action="create">
-    <div>
-        <label>
-            Kunde
-            <f:form.textfield property="customer" />
-        </label>
-    </div>
-    <div>
-        <label>
-            Ausgangssprache
-            <f:form.textfield property="fromLanguage" />
-        </label>
-    </div>
-    <div>
-        <label>
-            Zielsprache
-            <f:form.textfield property="toLanguage" />
-        </label>
-    </div>
-    <div>
-        <label>
-            Ausgangswort
-            <f:form.textfield property="subjectFrom" />
-        </label>
-    </div>
-    <div>
-        <label>
-            Zielwort
-            <f:form.textfield property="subjectTo" />
-        </label>
-    </div>
+    <f:render partial="FormFields" arguments="{_all}" />
 
     <f:form.submit value="Neuen Datensatz eintragen" />
 </f:form>

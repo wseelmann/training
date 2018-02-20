@@ -64,6 +64,26 @@ class TransController extends ActionController
      * @param Trans $translation
      * @return void
      */
+    public function editAction(Trans $translation)
+    {
+        $this->view->assign('translation', $translation);
+    }
+
+    /**
+     * @param Trans $translation
+     * @return void
+     */
+    public function updateAction(Trans $translation)
+    {
+        $this->transRepository->update($translation);
+        $this->addFlashMessage('Datensatz erfolgreich geändert');
+        $this->redirect('list');
+    }
+
+    /**
+     * @param Trans $translation
+     * @return void
+     */
     public function deleteAction(Trans $translation)
     {
         $this->transRepository->remove($translation);
