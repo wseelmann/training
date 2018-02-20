@@ -4,7 +4,7 @@ namespace In2code\Translation\Controller;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * TransController
+ * Class TransController
  */
 class TransController extends ActionController
 {

@@ -1,2 +1,18 @@
-HW
-{auto.customer}
+<table>
+    <tr>
+        <th>Kunde</th>
+        <th>Von</th>
+        <th>Nach</th>
+        <th>Begriff von</th>
+        <th>Begriff nach</th>
+    </tr>
+    <f:for each="{translations}" as="translation">
+        <tr>
+            <td>{translation.customer}</td>
+            <td>{translation.fromLanguage}</td>
+            <td>{translation.toLanguage}</td>
+            <td>{translation.subjectFrom}</td>
+            <td>{translation.subjectTo}</td>
+        </tr>
+    </f:for>
+</table>
