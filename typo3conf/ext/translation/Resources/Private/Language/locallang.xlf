@@ -25,6 +25,10 @@
 			<trans-unit id="dateformat">
 				<source>Y-m-d</source>
 			</trans-unit>
+
+			<trans-unit id="flashmessage.create">
+				<source>New record saved</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

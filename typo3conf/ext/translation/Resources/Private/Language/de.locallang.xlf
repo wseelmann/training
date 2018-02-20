@@ -32,6 +32,11 @@
 				<source>Y-m-d</source>
 				<target state="translated">d.m.Y</target>
 			</trans-unit>
+
+			<trans-unit id="flashmessage.create">
+				<source>New record saved</source>
+				<target state="translated">Datensatz erfolgreich gespeichert</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
