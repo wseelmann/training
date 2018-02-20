@@ -16,12 +16,14 @@ class TransController extends ActionController
     protected $transRepository = null;
 
     /**
+     * @param array $filter
      * @return void
      */
-    public function listAction()
+    public function listAction(array $filter = [])
     {
-        $translations = $this->transRepository->findAll();
+        $translations = $this->transRepository->findByFilter($filter);
         $this->view->assign('translations', $translations);
+        $this->view->assign('filter', $filter);
     }
 
     /**
