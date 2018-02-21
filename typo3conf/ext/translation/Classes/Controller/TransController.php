@@ -2,6 +2,7 @@
 namespace In2code\Translation\Controller;
 
 use In2code\Translation\Domain\Model\Trans;
+use In2code\Translation\Domain\Repository\CustomerRepository;
 use In2code\Translation\Domain\Repository\TransRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
@@ -54,6 +55,8 @@ class TransController extends ActionController
      */
     public function newAction()
     {
+        $customerRepository = $this->objectManager->get(CustomerRepository::class);
+        $this->view->assign('customers', $customerRepository->findAll());
     }
 
     /**
@@ -79,6 +82,8 @@ class TransController extends ActionController
      */
     public function editAction(Trans $translation)
     {
+        $customerRepository = $this->objectManager->get(CustomerRepository::class);
+        $this->view->assign('customers', $customerRepository->findAll());
         $this->view->assign('translation', $translation);
     }
 
