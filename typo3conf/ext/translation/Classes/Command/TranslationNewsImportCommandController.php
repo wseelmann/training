@@ -18,6 +18,11 @@ class TranslationNewsImportCommandController extends CommandController
 {
 
     /**
+     * @var NewsRepository
+     */
+    protected $newsRepository = null;
+
+    /**
      * CommandController for RSS import
      *
      * @param int $pageId Page id to import in
@@ -26,26 +31,65 @@ class TranslationNewsImportCommandController extends CommandController
      */
     public function importCommand(int $pageId = 26, string $url = 'https://www.evs-translations.com/blog/feed/')
     {
-        $newsRepository = $this->objectManager->get(NewsRepository::class);
         $rssRepository = $this->objectManager->get(RssRepository::class);
-        $persistanceManager = $this->objectManager->get(PersistenceManager::class);
-
         $items = $rssRepository->getRssProperties($url);
-        foreach ($items as $item) {
-            /** @var News $news */
-            $news = $this->objectManager->get(News::class);
-            $news->_setProperty('pid', $pageId);
-            $news->setTitle($item['title']);
-            $news->setDate($item['date']);
-            $news->setDescription($item['description']);
-            $news->setLink($item['link']);
-            $newsRepository->add($news);
-        }
-        $persistanceManager->persistAll();
+
+        $this->updateOrImport($items, $pageId);
 
         $message = 'Successfully imported!';
         $this->addMessage($message, 'Success');
         $this->outputLine($message);
+    }
+
+    /**
+     * @param array $items
+     * @param int $pageId
+     * @return void
+     */
+    protected function updateOrImport(array $items, int $pageId)
+    {
+        foreach ($items as $item) {
+            if ($this->newsRepository->isExistingByLinkAndPageId($item['link'], $pageId)) {
+                $this->update($item, $pageId);
+            } else {
+                $this->import($item, $pageId);
+            }
+        }
+        $persistanceManager = $this->objectManager->get(PersistenceManager::class);
+        $persistanceManager->persistAll();
+    }
+
+    /**
+     * @param array $item
+     * @param int $pageId
+     * @return void
+     */
+    protected function update(array $item, int $pageId)
+    {
+        $news = $this->newsRepository->getByLinkAndPageId($item['link'], $pageId)->getFirst();
+        $news->_setProperty('pid', $pageId);
+        $news->setTitle($item['title']);
+        $news->setDate($item['date']);
+        $news->setDescription($item['description']);
+        $news->setLink($item['link']);
+        $this->newsRepository->update($news);
+    }
+
+    /**
+     * @param array $item
+     * @param int $pageId
+     * @return void
+     */
+    protected function import(array $item, int $pageId)
+    {
+        /** @var News $news */
+        $news = $this->objectManager->get(News::class);
+        $news->_setProperty('pid', $pageId);
+        $news->setTitle($item['title']);
+        $news->setDate($item['date']);
+        $news->setDescription($item['description']);
+        $news->setLink($item['link']);
+        $this->newsRepository->add($news);
     }
 
     /**
@@ -65,5 +109,14 @@ class TranslationNewsImportCommandController extends CommandController
         $flashMessageService = $this->objectManager->get(FlashMessageService::class);
         $messageQueue = $flashMessageService->getMessageQueueByIdentifier();
         $messageQueue->enqueue($message);
+    }
+
+    /**
+     * @param NewsRepository $newsRepository
+     * @return void
+     */
+    public function injectNewsRepository(NewsRepository $newsRepository)
+    {
+        $this->newsRepository = $newsRepository;
     }
 }

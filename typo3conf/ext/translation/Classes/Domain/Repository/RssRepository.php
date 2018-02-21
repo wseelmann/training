@@ -30,7 +30,7 @@ class RssRepository
     }
 
     /**
-     * @param \SimpleXMLElement $xml
+     * @param \SimpleXMLElement[] $xml
      * @return array
      */
     protected function convertXmlToArray($xml): array
