@@ -14,13 +14,14 @@ class TransRepository extends Repository
     /**
      * @param array $filter
      * @param array $sorting
+     * @param array $settings
      * @return QueryResultInterface
      */
-    public function findByFilter(array $filter, array $sorting): QueryResultInterface
+    public function findByFilter(array $filter, array $sorting, array $settings): QueryResultInterface
     {
         $query = $this->createQuery();
         $this->addFilterQuery($filter, $query);
-        $this->addOrder($query, $sorting);
+        $this->addOrder($query, $sorting, $settings);
         return $query->execute();
     }
 
@@ -62,9 +63,10 @@ class TransRepository extends Repository
     /**
      * @param QueryInterface $query
      * @param array $sorting
+     * @param array $settings
      * @return void
      */
-    protected function addOrder(QueryInterface $query, array $sorting)
+    protected function addOrder(QueryInterface $query, array $sorting, array $settings)
     {
         if ($sorting !== []) {
             $this->checkForAllowedOrderings($sorting);
@@ -73,8 +75,7 @@ class TransRepository extends Repository
             ]);
         } else {
             $query->setOrderings([
-                'subjectFrom' => QueryInterface::ORDER_ASCENDING,
-                'subjectTo' => QueryInterface::ORDER_ASCENDING
+                $settings['sorting']['field'] => $settings['sorting']['order']
             ]);
         }
     }
