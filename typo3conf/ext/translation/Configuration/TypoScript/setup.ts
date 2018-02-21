@@ -29,3 +29,29 @@ plugin.tx_translation_pi1 {
 }
 
 page.includeCSS.training = EXT:translation/Resources/Public/Css/Training.css
+
+# Open RSS with /index.php?id=27&type=1519224173
+rssTranslationNews = PAGE
+rssTranslationNews {
+    typeNum = 1519224173
+    config {
+        additionalHeaders.10.header = Content-Type: application/rss+xml
+        disableAllHeaderCode = 1
+        disablePrefixComment = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        debug = 0
+    }
+
+    10 = USER
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Translation
+        pluginName = Pi2
+        vendorName = In2code
+        controller = News
+        action = rss
+        switchableControllerActions.News.1 = rss
+        persistence.storagePid = 26
+    }
+}

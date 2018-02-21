@@ -18,4 +18,13 @@ class NewsController extends ActionController
         $newsRepository = $this->objectManager->get(NewsRepository::class);
         $this->view->assign('news', $newsRepository->findAll());
     }
+
+    /**
+     * @return void
+     */
+    public function rssAction()
+    {
+        $newsRepository = $this->objectManager->get(NewsRepository::class);
+        $this->view->assign('news', $newsRepository->findAll());
+    }
 }
