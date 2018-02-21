@@ -35,5 +35,11 @@ call_user_func(
             }
        }'
         );
+
+        /**
+         * CommandController
+         */
+        $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['extbase']['commandControllers'][] =
+            \In2code\Translation\Command\TranslationNewsImportCommandController::class;
     }
 );
