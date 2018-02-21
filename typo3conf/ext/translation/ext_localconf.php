@@ -8,11 +8,11 @@ call_user_func(
             'In2code.Translation',
             'Pi1',
             [
-                'Trans' => 'list,detail,new,create,edit,update,delete'
+                'Trans' => 'list,list2,detail,new,create,edit,update,delete'
             ],
             // non-cacheable actions
             [
-                'Trans' => 'list,new,create,edit,update,delete'
+                'Trans' => 'list,list2,new,create,edit,update,delete'
             ]
         );
 
