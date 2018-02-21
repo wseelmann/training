@@ -26,7 +26,6 @@ class RssRepository
                 'date' => $item['pubDate']
             ];
         }
-        var_dump($feed);
         return $feed;
     }
 
