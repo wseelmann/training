@@ -1,28 +1,17 @@
 <?php
 namespace In2code\Translation\Domain\Model;
 
-/***
- *
- * This file is part of the "translation" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- *  (c) 2018 Alex Kellne <alexander.kellner@in2code.de>, in2code GmbH
- *
- ***/
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Trans
  */
-class Trans extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Trans extends AbstractEntity
 {
     /**
-     * customer
-     *
-     * @var string
+     * @var \In2code\Translation\Domain\Model\Customer
      */
-    protected $customer = '';
+    protected $customer = null;
 
     /**
      * fromLanguage
@@ -58,9 +47,7 @@ class Trans extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $tstamp = null;
 
     /**
-     * Returns the customer
-     *
-     * @return string $customer
+     * @return Customer
      */
     public function getCustomer()
     {
@@ -68,9 +55,7 @@ class Trans extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the customer
-     *
-     * @param string $customer
+     * @param $customer
      * @return void
      */
     public function setCustomer($customer)

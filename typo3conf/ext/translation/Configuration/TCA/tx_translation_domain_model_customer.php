@@ -1,8 +1,8 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_trans',
-        'label' => 'subject_from',
+        'title' => 'Customer',
+        'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +16,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'customer,from_language,to_language,subject_from,subject_to',
+        'searchFields' => 'title',
         'iconfile' => 'EXT:translation/Resources/Public/Icons/tx_translation_domain_model_trans.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, customer, from_language, to_language, subject_from, subject_to',
+        'showRecordFieldList' => 'title',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, customer, from_language, to_language, subject_from, subject_to, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'title'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -108,56 +108,13 @@ return [
             ],
         ],
 
-        'customer' => [
+        'title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_trans.customer',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'tx_translation_domain_model_customer',
-                'foreign_table_where' => ' AND tx_translation_domain_model_customer.sys_language_uid IN (-1,0)',
-            ],
-        ],
-        'from_language' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_trans.from_language',
+            'label' => 'Bezeichnung',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
-            ],
-        ],
-        'to_language' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_trans.to_language',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
-            ],
-        ],
-        'subject_from' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_trans.subject_from',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
-            ],
-        ],
-        'subject_to' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_trans.subject_to',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
-            ],
-        ],
-        'tstamp' => [
-            'config' => [
-                'type' => 'input',
-                'eval' => 'datetime'
             ],
         ],
     ],
