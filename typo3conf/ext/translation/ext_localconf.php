@@ -15,6 +15,17 @@ call_user_func(
                 'Trans' => 'list,list2,new,create,edit,update,delete'
             ]
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+            'In2code.Translation',
+            'Pi2',
+            [
+                'News' => 'list'
+            ],
+            // non-cacheable actions
+            [
+                'News' => 'list'
+            ]
+        );
 
         // wizards
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
@@ -22,12 +33,21 @@ call_user_func(
             wizards.newContentElement.wizardItems.plugins {
                 elements {
                     pi1 {
-                        icon = ' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('translation') . 'Resources/Public/Icons/user_plugin_pi1.svg
-                        title = LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_pi1
-                        description = LLL:EXT:translation/Resources/Private/Language/locallang_db.xlf:tx_translation_domain_model_pi1.description
+                        icon = typo3conf/ext/translation/Resources/Public/Icons/user_plugin_pi1.svg
+                        title = Translationlist
+                        description = Translationlist
                         tt_content_defValues {
                             CType = list
                             list_type = translation_pi1
+                        }
+                    }
+                    pi2 {
+                        icon = typo3conf/ext/translation/Resources/Public/Icons/user_plugin_pi1.svg
+                        title = News
+                        description = Newslist
+                        tt_content_defValues {
+                            CType = list
+                            list_type = translation_pi2
                         }
                     }
                 }

@@ -9,6 +9,11 @@ call_user_func(
             'Pi1',
             'Translationlist'
         );
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'In2code.Translation',
+            'Pi2',
+            'News'
+        );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
             'translation',

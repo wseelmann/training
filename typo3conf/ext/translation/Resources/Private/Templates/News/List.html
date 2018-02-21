@@ -1,0 +1,10 @@
+<f:for each="{news}" as="newsItem">
+    <div style="background-color: grey; padding: 10px; margin: 10px;">
+        <h2>{newsItem.title}</h2>
+        <h3>{newsItem.date}</h3>
+        <p>
+            <a href="{newsItem.link}">{newsItem.link}</a>
+        </p>
+        <f:format.raw>{newsItem.description}</f:format.raw>
+    </div>
+</f:for>
