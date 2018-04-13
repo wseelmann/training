@@ -10,6 +10,7 @@ I renamed the repository from Playground to Training
 
 | Branch      | Date        | Content                                           | 
 | ----------- | ----------- | ------------------------------------------------- |
+| lrz         | 2018-04     | TYPO3 Integration/Admin Training                  |
 | evs         | 2018-02     | TYPO3 Extbase/Fluid Person Training               |
 | undkonsorten| 2017-10     | TYPO3 Integration/Admin Training                  |
 | eno.de      | 2017-08     | TYPO3 Integration/Admin & Extbase/Fluid Training  |
