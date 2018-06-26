@@ -1,0 +1,51 @@
+{namespace t=In2code\Translation\ViewHelpers}
+<f:layout name="Translation" />
+
+    Add an layout
+
+
+<f:section name="List">
+    <f:render partial="Filter" arguments="{_all}" />
+    <f:render partial="FlashMessage" arguments="{_all}" />
+
+    <f:if condition="{translations}">
+        <f:then>
+            <table>
+                <tr>
+                    <th>Uid</th>
+                    <th><f:translate key="tx_translation_domain_model_trans.customer">kunde</f:translate></th>
+                    <th>von/nach</th>
+                    <th><f:link.action arguments="{t:getSortingArgumentsOnField(field:'subjectFrom')}">Begriff</f:link.action></th>
+                    <th>Veraltet?</th>
+                    <th></th>
+                </tr>
+                <f:for each="{translations}" as="translation">
+                    <tr>
+                        <td>{translation.uid}</td>
+                        <td>{translation.customer.title}</td>
+                        <td>{translation.fromLanguage}/{translation.toLanguage}</td>
+                        <td>{translation.subjectFrom}</td>
+                        <td>
+                            <f:if condition="{translation.tooOld}">
+                                Bitte prüfen!
+                            </f:if>
+
+                            <f:if condition="{t:isTooOld(tstamp:translation.tstamp)}">
+                                Bitte prüfen (VH)!
+                            </f:if>
+                        </td>
+                        <td>
+                            <f:link.action action="detail" arguments="{translation:translation}">Link</f:link.action>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </f:then>
+        <f:else>
+            Keine Daten vorhanden.
+            <f:link.page>Zeige alle Daten</f:link.page>
+        </f:else>
+    </f:if>
+
+    <f:link.action action="new">Neuen Datensatz hinzufügen</f:link.action>
+</f:section>

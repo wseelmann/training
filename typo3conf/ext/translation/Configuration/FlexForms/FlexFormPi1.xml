@@ -1,0 +1,48 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Konfiguration</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Ansicht wählen</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">Listenansicht 1</numIndex>
+										<numIndex index="1">Trans->list;Trans->detail;Trans->new;Trans->create;Trans->edit;Trans->update;Trans->delete</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">Listenansicht 2</numIndex>
+										<numIndex index="1">Trans->list2;Trans->detail;</numIndex>
+									</numIndex>
+								</items>
+								<maxitems>1</maxitems>
+								<size>1</size>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					<settings.showFilter>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>Zeige Filter</label>
+							<config>
+								<type>check</type>
+								<default>1</default>
+							</config>
+						</TCEforms>
+					</settings.showFilter>
+				</el>
+			</ROOT>
+		</main>
+	</sheets>
+</T3DataStructure>

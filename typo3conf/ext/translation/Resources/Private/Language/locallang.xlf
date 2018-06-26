@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-02-19T14:49:04Z" product-name="translation">
+		<header/>
+		<body>
+			<trans-unit id="tx_translation_domain_model_trans">
+				<source>Trans</source>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.customer">
+				<source>Customer</source>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.from_language">
+				<source>From Language</source>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.to_language">
+				<source>To Language</source>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.subject_from">
+				<source>Subject From</source>
+			</trans-unit>
+			<trans-unit id="tx_translation_domain_model_trans.subject_to">
+				<source>Subject To</source>
+			</trans-unit>
+
+			<trans-unit id="dateformat">
+				<source>Y-m-d</source>
+			</trans-unit>
+
+			<trans-unit id="flashmessage.create">
+				<source>New record saved</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
