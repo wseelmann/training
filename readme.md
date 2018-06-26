@@ -1,10 +1,10 @@
 # TYPO3 instance for your training session
 
-Welcome Werner to your individual training for extension development or administration/integration in TYPO3  
+My individual training for extension development and administration/integration in TYPO3  
 
 ## Note
 
-I renamed the repository from Playground to Training
+This is a description from Alex Kellner.
 
 ## Overview
 
